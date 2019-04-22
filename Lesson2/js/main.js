@@ -68,9 +68,7 @@ let money = +prompt("Ваш бюджет на месяц?"),
 
     
     appData.moneyPerDay = appData.biudget / 30;
-
     alert("Ежедневный доход: " + appData.moneyPerDay);
-
     if (appData.moneyPerDay < 1000){
             console.log("Минимальный уровень достатка!");
     } else if (appData.moneyPerDay > 2000){
@@ -78,8 +76,7 @@ let money = +prompt("Ваш бюджет на месяц?"),
     }else {
         console.log("Произошла ошибка!");
     };
-
-
+    console.log(appData);
 
 
     
