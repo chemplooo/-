@@ -73,7 +73,6 @@ start();
                 };
             appData.income.forEach(function(item , i ){
                 console.log("Способы доп. заработка: " + (i+1) + item);
-                
             }
             );
             for (let key in appData){
