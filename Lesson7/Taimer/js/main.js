@@ -24,7 +24,7 @@ function startTime() {
 			ss = s < 10 ? "0" + s : s
 			m = m < 10 ? "0" + m : m
 			h = h < 10 ? "0" + h : h
-				document.getElementById('time').innerHTML = ss + ":" + h + ":" + m;
+				document.getElementById('time').innerHTML = h + ":" + m + ":" + ss;
 			t = setTimeout(function () {
 								startTime()
 					}, 1000);
