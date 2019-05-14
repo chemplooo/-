@@ -19,4 +19,8 @@ window.addEventListener("DOMContentLoaded", function () {
         this.value);
     }
   
+<<<<<<< HEAD
   });
+=======
+  });
+>>>>>>> affb5e7ddaa965aa09bb04d9ca1489af0c1076a4
