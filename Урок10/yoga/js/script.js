@@ -82,19 +82,19 @@ window.addEventListener('DOMContentLoaded', () => {
     };
     
         let setClock = (id,endTime) => {
-            timer = document.getElementById(id),
-            hour = timer.querySelector('.hours'),
-            min = timer.querySelector('.minutes'),
-            second = timer.querySelector('.seconds'),
-            timeInterval = setInterval(updateClock, 1000);
+            let timer = document.getElementById(id),
+                hour = timer.querySelector('.hours'),
+                min = timer.querySelector('.minutes'),
+                second = timer.querySelector('.seconds'),
+                timeInterval = setInterval(updateClock, 1000);
         function updateClock () {
             let t = getTimeRemaning(endTime);
-            hour.textContent = t.hour;
-            min.textContent = t.min;
-            second.textContent = t.sec;
-            if (t.total <= 0) {
-                clearInterval(timeInterval);
-            }
+                hour.textContent = t.hour;
+                min.textContent = t.min;
+                second.textContent = t.sec;
+                if (t.total <= 0) {
+                    clearInterval(timeInterval);
+                }
 
         }
     }
@@ -106,10 +106,6 @@ window.addEventListener('DOMContentLoaded', () => {
         closeButton = document.querySelector('.popup-close'),
         allButtons = document.querySelectorAll('.description-btn');
 
-        allButtons.forEach((item) => {
-            openPopup(item);
-        });
-
     let openPopup = btn => {
         btn.addEventListener('click',  (e) => {
             overlay.style.display = 'block';
@@ -117,6 +113,10 @@ window.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'hidden';
         });
     }
+    
+      allButtons.forEach((item) => {
+            openPopup(item);
+        });
 
     closeButton.addEventListener('click', (e) => {
         overlay.style.display = 'none';
