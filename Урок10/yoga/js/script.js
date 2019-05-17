@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
         info = document.querySelector('.info-header'),
         tabContent = document.querySelectorAll('.info-tabcontent');
 
-    function hideTabContent(a) {
+    let  hideTabContent = a => {
         tabContent.forEach((item,i) => {
             if (a != i) {
                 item.classList.remove('show');
@@ -13,7 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
     hideTabContent(0);
-    function showTabContent(b) {
+    
+    let showTabContent = b => {
         if (tabContent[b].classList.contains('hide')) {
             tabContent[b].classList.remove('hide');
             tabContent[b].classList.add('show');
@@ -79,20 +80,21 @@ window.addEventListener('DOMContentLoaded', () => {
             };
         }
     };
-    function setClock(id, endTime) {
-        let timer = document.getElementById(id),
-            hour = timer.querySelector('.hours'),
-            min = timer.querySelector('.minutes'),
-            second = timer.querySelector('.seconds'),
-            timeInterval = setInterval(updateClock, 1000);
-        function updateClock() {
+    
+        let setClock = (id,endTime) => {
+            let timer = document.getElementById(id),
+                hour = timer.querySelector('.hours'),
+                min = timer.querySelector('.minutes'),
+                second = timer.querySelector('.seconds'),
+                timeInterval = setInterval(updateClock, 1000);
+        function updateClock () {
             let t = getTimeRemaning(endTime);
-            hour.textContent = t.hour;
-            min.textContent = t.min;
-            second.textContent = t.sec;
-            if (t.total <= 0) {
-                clearInterval(timeInterval);
-            }
+                hour.textContent = t.hour;
+                min.textContent = t.min;
+                second.textContent = t.sec;
+                if (t.total <= 0) {
+                    clearInterval(timeInterval);
+                }
 
         }
     }
@@ -104,17 +106,17 @@ window.addEventListener('DOMContentLoaded', () => {
         closeButton = document.querySelector('.popup-close'),
         allButtons = document.querySelectorAll('.description-btn');
 
-        allButtons.forEach((item) => {
-            openPopup(item);
-        });
-
-    function openPopup(btn) {
+    let openPopup = btn => {
         btn.addEventListener('click',  (e) => {
             overlay.style.display = 'block';
             e.target.classList.add('more-spash');
             document.body.style.overflow = 'hidden';
         });
     }
+    
+      allButtons.forEach((item) => {
+            openPopup(item);
+        });
 
     closeButton.addEventListener('click', (e) => {
         overlay.style.display = 'none';
@@ -125,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     // дополнительное
-    function getNameBrowser(){
+    let getNameBrowser = () => {
         let ua = navigator.userAgent;    
         if (ua.search(/MSIE/) > 0) {return 'Internet Explorer'};
         return 'Не определен';
